@@ -8,7 +8,7 @@ install camelot dan pandas juga
 Habis itu, download GhostScript
 https://ghostscript.com/releases/gsdnld.html
 
-klik yang Windows 32/64 bit yang bagian GNU Affero General Public License
+klik yang Windows 32/64 bit (tergantung laptop sendiri) yang bagian GNU Affero General Public License
 
 Habis itu, ikutin arahan ini.
 Cari installan ghostscript di file explorer dengan path ini "C:\Program Files\gs\gs<version>\bin"
