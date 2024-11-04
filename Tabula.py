@@ -1,30 +1,31 @@
 import camelot
+import pandas as pd
 import os
 
-# Path to your PDF file
 pdf_path = "FinancialStatement-2024-I-AALI.pdf"
 
-# Create a directory to store the CSV files
-output_dir = "extracted_tables"
+output_dir = "extracted_content_page_9"
 os.makedirs(output_dir, exist_ok=True)
 
-# Read tables from only the first page
-tables = camelot.read_pdf(pdf_path, pages='1', flavor='lattice')
+page_number = '1'
 
-# Check if tables were extracted
+tables = camelot.read_pdf(pdf_path, pages=page_number, flavor='stream')
+
 if tables:
-    # Process only the first 3 tables (or fewer if there are less than 3)
-    for i, table in enumerate(tables[:3]):
-        print(f"Extracting Table {i+1} on page 1")
-        
-        # Generate a filename for the CSV
-        csv_filename = os.path.join(output_dir, f"table_{i+1}.csv")
-        
-        # Save the table to a CSV file
-        table.to_csv(csv_filename)
-        print(f"Table {i+1} saved to {csv_filename}")
-        print("\n")
+    combined_df = pd.concat([table.df for table in tables])
+
+    csv_filename = os.path.join(output_dir, f"Extracted.csv")
+
+    combined_df.to_csv(csv_filename, index=False, header=False)
+    print(f"Content from page 1 saved to {csv_filename}")
+
+    txt_filename = os.path.join(output_dir, f"Extracted.txt")
+    with open(txt_filename, 'w', encoding='utf-8') as txt_file:
+        for table in tables:
+            txt_file.write(table.data_to_string())
+            txt_file.write('\n\n')
+    print(f"Content from page 1 also saved to {txt_filename}")
 else:
-    print("No tables found on page 1")
+    print("No content found on page 1.")
 
 print("Extraction complete.")
