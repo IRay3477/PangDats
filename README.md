@@ -2,6 +2,9 @@
 Bisa install camelot di terminal dulu
 `pip install camelot-py[cv]`
 
+install camelot dan pandas juga
+`pip install camelot-py[cv] pandas`
+
 Habis itu, download GhostScript
 https://ghostscript.com/releases/gsdnld.html
 
