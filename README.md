@@ -5,6 +5,9 @@ Bisa install camelot di terminal dulu
 install camelot dan pandas juga
 `pip install camelot-py[cv] pandas`
 
+install juga ini kalau mau pake yang camelotmysql
+`pip install mysql-connector-python` 
+
 Habis itu, download GhostScript
 https://ghostscript.com/releases/gsdnld.html
 
