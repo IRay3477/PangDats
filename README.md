@@ -11,8 +11,8 @@ https://ghostscript.com/releases/gsdnld.html
 klik yang Windows 32/64 bit (tergantung laptop sendiri) yang bagian GNU Affero General Public License
 
 Habis itu, ikutin arahan ini.
-Cari installan ghostscript di file explorer dengan path ini "C:\Program Files\gs\gs<version>\bin"
-Copy path nya
+Cari installan ghostscript di file explorer dengan path ini "C:\Program Files\gs\gs<version>\bin".
+Copy path nya.
 Buka System Properties > Environment Variables.
 Di System Variables, Cari bagian "Path", Klik Edit, habis itu tambahin Ghostscript path yang dah di copy tadi.
 Klik OK, habis itu restart Vscode, CMD, atau IDE lain yang dah di buka.
